@@ -12,7 +12,8 @@ export async function POST(request: Request) {
       { status: 500 },
     );
   }
-
+  console.log(process.env.ADMIN_USERNAME)
+console.log(username)
   if (!verifyAdminLogin(username, password)) {
     return NextResponse.json({ message: "Invalid admin credentials." }, { status: 401 });
   }

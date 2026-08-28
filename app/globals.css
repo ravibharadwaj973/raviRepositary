@@ -2022,6 +2022,7 @@ a {
 .admin-login-card {
   display: grid;
   gap: 1rem;
+  min-width: 0;
   border: 1px solid rgba(255, 43, 43, 0.45);
   background:
     linear-gradient(135deg, rgba(255, 43, 43, 0.14), transparent 38%),
@@ -2042,6 +2043,7 @@ a {
 .admin-login-card label {
   display: grid;
   gap: 0.45rem;
+  min-width: 0;
 }
 
 .requirement-form label span,
@@ -2059,6 +2061,7 @@ a {
 .requirement-form textarea,
 .admin-login-card input {
   width: 100%;
+  min-width: 0;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 0;
   background: rgba(0, 0, 0, 0.62);
@@ -2177,7 +2180,7 @@ a {
 
 .direct-connect div {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
 }
 
@@ -2185,6 +2188,7 @@ a {
   display: grid;
   gap: 0.35rem;
   min-height: 92px;
+  min-width: 0;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.035);
   color: #f2f2f2;
@@ -2192,6 +2196,8 @@ a {
   font-weight: 800;
   line-height: 1.35;
   padding: 0.85rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
   transition:
     border-color 0.24s ease,
     box-shadow 0.24s ease,
@@ -2200,6 +2206,7 @@ a {
 }
 
 .direct-connect a span {
+  min-width: 0;
   color: var(--accent);
   font-family: "Courier New", monospace;
   font-size: 0.74rem;
@@ -2748,6 +2755,12 @@ a {
     min-height: 0;
     height: auto;
     aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 920px) {
+  .requirement-section {
+    grid-template-columns: 1fr;
   }
 }
 
