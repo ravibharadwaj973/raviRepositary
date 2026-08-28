@@ -121,10 +121,6 @@ export function RequirementForm() {
               <span>Phone</span>
               9311891503
             </a>
-            <a href="https://www.linkedin.com/in/ravi-jha-8a620b3b9/" target="_blank" rel="noreferrer">
-              <span>LinkedIn</span>
-              Connect professionally
-            </a>
             <a href="https://github.com/ravibharadwaj973" target="_blank" rel="noreferrer">
               <span>GitHub</span>
               View my technical work

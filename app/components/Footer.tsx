@@ -26,9 +26,6 @@ export function Footer() {
 
         <div className="footer-group">
           <h2>Connect</h2>
-          <a href="https://www.linkedin.com/in/ravi-jha-8a620b3b9/" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
           <a href="https://github.com/ravibharadwaj973" target="_blank" rel="noreferrer">
             GitHub
           </a>
