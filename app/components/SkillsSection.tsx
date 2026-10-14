@@ -1,33 +1,51 @@
 "use client";
 
 import type { CSSProperties, MouseEvent } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { skills } from "../data/portfolio";
 
 export function SkillsSection() {
   const [activeSkill, setActiveSkill] = useState<(typeof skills)[number] | null>(
     null,
   );
-  const [popupPosition, setPopupPosition] = useState({ left: 0, top: 0 });
+  const [popupPosition, setPopupPosition] = useState({ left: 0, top: 0, maxHeight: 430 });
+
+  useEffect(() => {
+    if (!activeSkill) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setActiveSkill(null);
+    };
+    const onResize = () => setActiveSkill(null);
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [activeSkill]);
 
   const openSkill = (
     skill: (typeof skills)[number],
     event: MouseEvent<HTMLButtonElement>,
   ) => {
     const popupWidth = Math.min(920, window.innerWidth - 32);
-    const popupHeight = window.innerWidth <= 800 ? window.innerHeight - 32 : 430;
-    const clickX = event.clientX;
-    const clickY = event.clientY;
+    const rect = event.currentTarget.getBoundingClientRect();
+    const clickX = event.detail === 0 ? rect.left : event.clientX;
+    const clickY = event.detail === 0 ? rect.top : event.clientY;
     const left = Math.min(
       Math.max(16, clickX - 24),
       window.innerWidth - popupWidth - 16,
     );
+    // Keep the popup near the click and scroll its content when space is limited.
+    const minimumHeight = Math.min(280, window.innerHeight - 32);
     const top = Math.min(
       Math.max(16, clickY - 24),
-      window.innerHeight - popupHeight - 16,
+      window.innerHeight - minimumHeight - 16,
     );
 
-    setPopupPosition({ left, top });
+    setPopupPosition({ left, top, maxHeight: window.innerHeight - top - 16 });
     setActiveSkill(skill);
   };
 
@@ -57,7 +75,7 @@ export function SkillsSection() {
         ))}
       </div>
 
-      {activeSkill && (
+      {activeSkill && createPortal(
         <div
           className="skill-popup-backdrop"
           onClick={() => setActiveSkill(null)}
@@ -70,6 +88,7 @@ export function SkillsSection() {
               {
                 "--popup-left": `${popupPosition.left}px`,
                 "--popup-top": `${popupPosition.top}px`,
+                "--popup-max-height": `${popupPosition.maxHeight}px`,
               } as CSSProperties
             }
           >
@@ -97,7 +116,8 @@ export function SkillsSection() {
               </ul>
             </div>
           </article>
-        </div>
+        </div>,
+        document.body,
       )}
     </section>
   );

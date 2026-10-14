@@ -779,8 +779,8 @@ a {
   grid-template-columns: minmax(280px, 1fr) minmax(260px, 0.72fr);
   gap: clamp(1.2rem, 3vw, 2rem);
   width: min(920px, calc(100vw - 32px));
-  min-height: 430px;
-  max-height: calc(100vh - 32px);
+  min-height: min(430px, var(--popup-max-height));
+  max-height: var(--popup-max-height);
   overflow: auto;
   border: 1px solid rgba(255, 43, 43, 0.68);
   background:
@@ -2847,7 +2847,6 @@ a {
 
   .skill-popup {
     grid-template-columns: 1fr;
-    max-height: calc(100vh - 2rem);
     overflow: auto;
   }
 
