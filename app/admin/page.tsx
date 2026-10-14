@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { AdminDashboard } from "../components/AdminDashboard";
 import { AdminLogin } from "../components/AdminLogin";
@@ -5,6 +6,12 @@ import { SiteBackground } from "../components/SiteBackground";
 import { ADMIN_COOKIE, isValidAdminToken } from "../lib/adminAuth";
 import { getPortfolioDb } from "../lib/mongodb";
 import type { RequirementSubmission } from "../types/requirements";
+
+export const metadata: Metadata = {
+  title: "Admin | Ravi Jha",
+  robots: { index: false, follow: false },
+  alternates: { canonical: "/admin" },
+};
 
 async function getRequirements(): Promise<RequirementSubmission[]> {
   const db = await getPortfolioDb();

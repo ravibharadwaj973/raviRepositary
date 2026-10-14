@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,6 +9,21 @@ type ProjectPageProps = {
     id: string;
   }>;
 };
+
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const project = projects.find((item) => item.id === id);
+
+  if (!project) {
+    notFound();
+  }
+
+  return {
+    title: `${project.title} | Ravi Jha`,
+    description: project.summary,
+    alternates: { canonical: `/project/${project.id}` },
+  };
+}
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { id } = await params;

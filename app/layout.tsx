@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SITE_URL } from "./lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jharavi.in"),
+  metadataBase: new URL(SITE_URL),
   title: "Ravi Portfolio",
   description: "Black, white, and red motion portfolio.",
   icons: {
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ravi Portfolio",
     description: "Software systems, business applications, cloud infrastructure, and automation.",
-    url: "https://jharavi.in",
+    url: SITE_URL,
     siteName: "Ravi Portfolio",
     images: [{ url: "/logo1.png", width: 1200, height: 630, alt: "Ravi Portfolio logo" }],
     type: "website",

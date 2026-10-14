@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { ProjectsPageClient } from "../components/ProjectsPageClient";
 import { SiteBackground } from "../components/SiteBackground";
 import { projects } from "../projectsData";
+
+export const metadata: Metadata = {
+  title: "Projects | Ravi Jha",
+  alternates: { canonical: "/projects" },
+};
 
 export default function ProjectsPage() {
   return (
