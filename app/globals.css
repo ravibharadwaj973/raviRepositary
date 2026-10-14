@@ -764,23 +764,22 @@ a {
   position: fixed;
   inset: 0;
   z-index: 40;
-  display: block;
-  padding: clamp(1rem, 4vw, 2.5rem);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
   background: rgba(0, 0, 0, 0.72);
   backdrop-filter: blur(10px);
   animation: popup-backdrop 0.18s ease both;
 }
 
 .skill-popup {
-  position: absolute;
-  top: var(--popup-top);
-  left: var(--popup-left);
+  position: relative;
   display: grid;
   grid-template-columns: minmax(280px, 1fr) minmax(260px, 0.72fr);
   gap: clamp(1.2rem, 3vw, 2rem);
-  width: min(920px, calc(100vw - 32px));
-  min-height: min(430px, var(--popup-max-height));
-  max-height: var(--popup-max-height);
+  width: min(920px, 100%);
+  min-height: min(430px, calc(100dvh - 32px));
+  max-height: calc(100dvh - 32px);
   overflow: auto;
   border: 1px solid rgba(255, 43, 43, 0.68);
   background:
@@ -790,7 +789,7 @@ a {
     0 0 0 1px rgba(255, 255, 255, 0.08),
     0 0 55px rgba(255, 43, 43, 0.34);
   padding: clamp(1rem, 2.6vw, 1.5rem);
-  transform-origin: 0 0;
+  transform-origin: center;
   animation: popup-in 0.24s cubic-bezier(0.2, 0.8, 0.22, 1) both;
 }
 
