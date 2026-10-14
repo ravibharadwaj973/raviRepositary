@@ -45,16 +45,21 @@ export function AboutPage() {
         <Header />
 
         <section className="about-hero" aria-labelledby="about-title">
-          <p className="eyebrow">About me</p>
+          <p className="eyebrow">About Jharavi / Ravi Jha</p>
           <h1 id="about-title">
             I build software systems around real business problems.
           </h1>
           <p>
-            I&apos;m Ravi Jha, a software developer focused on building
+            Jharavi is my personal development portfolio. I&apos;m Ravi Jha, a full-stack developer focused on building
             full-stack applications, backend systems, cloud infrastructure, and
             automation. My work combines application development with the
             technical systems required to deploy, integrate, and operate
             software.
+          </p>
+          <p>
+            My Google Business profile is named ravi.tech. Here on Jharavi,
+            I share the applications, business systems, and cloud solutions I build,
+            along with my approach to solving real business problems.
           </p>
         </section>
 

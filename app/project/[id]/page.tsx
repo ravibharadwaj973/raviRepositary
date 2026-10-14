@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   }
 
   return {
-    title: `${project.title} | Ravi Jha`,
+    title: `${project.title} | Jharavi - Ravi Jha`,
     description: project.summary,
     alternates: { canonical: `/project/${project.id}` },
   };
@@ -37,7 +37,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <main className="project-detail-page">
       <nav className="portfolio-nav">
         <Link className="portfolio-signature" href="/">
-          Ravi
+          Jharavi
         </Link>
         <Link className="section-arrow-link" href="/projects">
           ←

@@ -6,7 +6,8 @@ import { SiteBackground } from "../components/SiteBackground";
 import { projects } from "../projectsData";
 
 export const metadata: Metadata = {
-  title: "Projects | Ravi Jha",
+  title: "Projects | Jharavi - Ravi Jha",
+  description: "Browse Ravi Jha's software projects on Jharavi, including business platforms, collaboration tools, and management applications.",
   alternates: { canonical: "/projects" },
 };
 

@@ -8,7 +8,7 @@ import { getPortfolioDb } from "../lib/mongodb";
 import type { RequirementSubmission } from "../types/requirements";
 
 export const metadata: Metadata = {
-  title: "Admin | Ravi Jha",
+  title: "Admin | Jharavi",
   robots: { index: false, follow: false },
   alternates: { canonical: "/admin" },
 };

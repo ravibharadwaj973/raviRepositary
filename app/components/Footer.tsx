@@ -8,11 +8,12 @@ export function Footer() {
           <Link className="footer-logo" href="/">
             RJ.
           </Link>
-          <p>Software Systems & Digital Solutions</p>
+          <p>Jharavi / Ravi Jha</p>
           <p>
             Building applications, business systems, cloud infrastructure, and
             automation.
           </p>
+          <p>Google Business profile: ravi.tech</p>
         </div>
 
         <div className="footer-group">

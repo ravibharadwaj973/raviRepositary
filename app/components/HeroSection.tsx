@@ -5,10 +5,13 @@ export function HeroSection() {
     <div className="hero-grid">
       <div className="hero-copy">
         <p className="eyebrow">Full Stack Developer / Cloud Engineer</p>
-        <h1 className="intro-name">I'm Ravi Jha</h1>
+        <h1 className="intro-name">
+          I'm Ravi Jha
+          <span className="intro-brand">Jharavi: my full-stack development portfolio</span>
+        </h1>
         <h2>Full Stack Developer & Cloud Engineer</h2>
         <p className="hero-text">
-          I build reliable software that helps businesses optimize operations,
+          Under my portfolio brand Jharavi, I build reliable software that helps businesses optimize operations,
           automate repetitive workflows, and turn marketing ideas into
           measurable digital systems.
         </p>

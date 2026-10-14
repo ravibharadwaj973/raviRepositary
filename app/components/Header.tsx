@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <nav className="portfolio-nav">
-      <div className="portfolio-signature">Ravi Jha</div>
+      <a className="portfolio-signature" href="/" aria-label="Jharavi home">Jharavi</a>
       <div className="nav-links">
         <a href="/">Home</a>
         <a href="/work">Work</a>
