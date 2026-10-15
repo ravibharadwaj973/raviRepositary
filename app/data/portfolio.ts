@@ -1,39 +1,52 @@
+import fullStackImage from "../../public/Full Stack Development Workspace.png";
+import crmImage from "../../public/CRM for SaaS Infographic Wheel.png";
+import apiImage from "../../public/API Integration Dashboard Illustration.png";
+import databaseImage from "../../public/Neon Cyber Database Network (1).png";
+import cloudImage from "../../public/Neon Cloud Network Visualization.png";
+import automationImage from "../../public/Solving Integrated Automation Architecture.png";
+
 export const skills = [
   {
     number: "01",
     title: "Full-Stack Development",
     details: ["Next.js", "React", "TypeScript", "Spring Boot"],
-    visual: "app",
+    image: fullStackImage,
+    imageAlt: "Full-stack development workspace with frontend and backend code",
   },
   {
     number: "02",
     title: "CRM & Business Systems",
     details: ["Lead Management", "Dashboards", "Workflows"],
-    visual: "crm",
+    image: crmImage,
+    imageAlt: "CRM infographic showing marketing, sales, reporting, and customer workflows",
   },
   {
     number: "03",
     title: "Backend & API Development",
     details: ["Java", "REST APIs", "Authentication", "Webhooks"],
-    visual: "api",
+    image: apiImage,
+    imageAlt: "API integration illustration connecting applications, data, and services",
   },
   {
     number: "04",
     title: "Database & Data Management",
     details: ["PostgreSQL", "MySQL", "JPA/Hibernate"],
-    visual: "data",
+    image: databaseImage,
+    imageAlt: "Database network connecting a central database to data tables",
   },
   {
     number: "05",
     title: "Cloud & DevOps",
     details: ["AWS", "Docker", "Terraform", "CI/CD"],
-    visual: "cloud",
+    image: cloudImage,
+    imageAlt: "Cloud network connecting applications, servers, and digital services",
   },
   {
     number: "06",
     title: "Automation & Integrations",
     details: ["APIs", "Webhooks", "External Systems"],
-    visual: "auto",
+    image: automationImage,
+    imageAlt: "Integrated automation architecture connecting cloud platforms and external systems",
   },
 ] as const;
 

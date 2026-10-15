@@ -793,6 +793,21 @@ a {
   animation: popup-in 0.24s cubic-bezier(0.2, 0.8, 0.22, 1) both;
 }
 
+.skill-photo {
+  position: relative;
+  align-self: center;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #090909;
+}
+
+.skill-photo img {
+  object-fit: contain;
+}
+
 .skill-visual {
   position: relative;
   min-height: 360px;

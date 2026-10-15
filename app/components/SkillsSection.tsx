@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { skills } from "../data/portfolio";
@@ -57,19 +58,13 @@ export function SkillsSection() {
             className="skill-popup"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className={`skill-visual skill-visual-${activeSkill.visual}`}>
-              <div className="mock-window">
-                <div className="mock-topbar">
-                  <span />
-                  <span />
-                  <span />
-                </div>
-                <div className="mock-screen">
-                  <span />
-                  <span />
-                  <span />
-                </div>
-              </div>
+            <div className="skill-photo">
+              <Image
+                src={activeSkill.image}
+                alt={activeSkill.imageAlt}
+                fill
+                sizes="(max-width: 800px) calc(100vw - 66px), 500px"
+              />
             </div>
             <div className="skill-popup-copy">
               <span className="skill-number">{activeSkill.number}</span>
